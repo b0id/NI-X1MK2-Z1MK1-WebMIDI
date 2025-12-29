@@ -3,7 +3,7 @@
 # 1. CLEANUP: Kill any running instances of the bridges
 echo "Stopping old bridges..."
 pkill -f "z1_bridge.py"
-pkill -f "x1_bridge_final.py"
+pkill -f "x1_bridge_v1_final.py"
 sleep 1
 
 # 2. START Z1 BRIDGE (Channel 1)
@@ -14,7 +14,7 @@ python3 z1_bridge.py &
 # 3. START X1 BRIDGE (Channel 2)
 echo "Starting X1 MK2 Bridge..."
 # Using the FINAL Corrected version we just made
-python3 x1_bridge_corrected.py --channel 2 &
+python3 x1_bridge_v1_final.py -v --channel 2 &
 
 # 4. WAIT for ports to be created
 echo "Waiting for MIDI ports to register..."
